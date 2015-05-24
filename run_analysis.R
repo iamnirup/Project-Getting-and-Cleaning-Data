@@ -36,18 +36,18 @@ write.table(cleanedData, "merged_data.txt")
 subjectLen <- length(table(join_subject)) 
 activityLen <- dim(activity)[1] 
 columnLen <- dim(cleanedData)[2]
-result <- matrix(NA, nrow=subjectLen*activityLen, ncol=columnLen) 
-result <- as.data.frame(result)
-colnames(result) <- colnames(cleanedData)
+tidy_data <- matrix(NA, nrow=subjectLen*activityLen, ncol=columnLen) 
+tidy_data <- as.data.frame(tidy_data)
+colnames(tidy_data) <- colnames(cleanedData)
 row <- 1
 for(i in 1:subjectLen) {
   for(j in 1:activityLen) {
-    result[row, 1] <- sort(unique(join_subject)[, 1])[i]
-    result[row, 2] <- activity[j, 2]
+    tidy_data[row, 1] <- sort(unique(join_subject)[, 1])[i]
+    tidy_data[row, 2] <- activity[j, 2]
     bool1 <- i == cleanedData$subject
     bool2 <- activity[j, 2] == cleanedData$activity
-    result[row, 3:columnLen] <- colMeans(cleanedData[bool1&bool2, 3:columnLen])
+    tidy_data[row, 3:columnLen] <- colMeans(cleanedData[bool1&bool2, 3:columnLen])
     row <- row + 1
   }
 }
-write.table(result, "tidy.txt")
+write.table(tidy_data, "tidy.txt", row.names=FALSE)
