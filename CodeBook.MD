@@ -5,23 +5,6 @@ This CoodBook describes the variables, data, and any transformations performed t
 * Data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 * Description of the dataset: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-
-### Set the source directory 
-After setting the source directory for the files, read into tables the data located in
-```r
-setwd("c:/Users/SS026381/R/")
-```
-
-### Transformation details
-There are 5 steps involve in this project. Each step is explained below in detail:
-
-* Merges the training and the test sets to create one data set.
-* Extract only the measurements on the mean and standard deviation for each measurement.
-* Uses descriptive activity names to name the activities in the data set
-* Appropriately labels the data set with descriptive activity names.
-* Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-
 ### The dataset includes the following files:
 * README.txt
 * features_info.txt
@@ -32,6 +15,30 @@ There are 5 steps involve in this project. Each step is explained below in detai
 * test/X_test.txt
 * test/y_test.txt
 
+* train/subject_train.txt: Every column distinguishes the subject that performs the action for every window test. Range is from 1 to 30.
+
+* train/Inertial Signals/total_acc_x_train.txt: Acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows 128 element vector. 
+* train/Inertial Signals/total_acc_x_train.txt: Same description as above for x. 
+* train/Inertial Signals/total_acc_z_train.txt: Same description as above for x.
+
+* train/Inertial Signals/body_acc_x_train.txt: Body acceleration signal obtained by subtracting the gravity from the total acceleration.
+
+* train/Inertial Signals/body_gyro_x_train.txt: Angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
+
+### Transformation details
+There are 5 steps involve in this project. Each step is explained below in detail:
+
+* Merges the training and the test sets to create one data set.
+* Extract only the measurements on the mean and standard deviation for each measurement.
+* Uses descriptive activity names to name the activities in the data set
+* Appropriately labels the data set with descriptive activity names.
+* Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+### Set the source directory 
+After setting the source directory for the files, read into tables the data located in
+```r
+setwd("c:/Users/SS026381/R/")
+```
 
 ### Step1. Merges the training and the test sets to create one data set.
 
