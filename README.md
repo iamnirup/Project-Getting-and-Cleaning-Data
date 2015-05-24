@@ -30,4 +30,4 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 * Unzip the dataset to the cloned repository root directory
 * Open a R-Studio and set the working directory to the repository root
 * Source run_analisys.R script 
-* Locate the file sensor_avg_by_act_sub.txt  with the tidy data set in the repo directory.
+* Locate the file tidy.txt  with the tidy data set in the root directory.
